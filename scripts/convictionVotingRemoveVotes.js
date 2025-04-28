@@ -81,7 +81,7 @@ async function main() {
 
         let perBatch = Math.ceil(txs.length / batchesCount);
         log(`perBatch ${perBatch}`)
-        const batches = chunkify(txs, perBatch).map(tx => client.tx.utility.batch(tx));
+        const batches = chunkify(txs, perBatch).map(tx => client.tx.technicalCommittee.execute(client.tx.utility.batch(tx),client.tx.utility.batch(tx).length);
 
         for (const [index, batch] of batches.entries()) {
             log(`Processing batch ${index + 1}`);
